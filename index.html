@@ -60,7 +60,7 @@
             }
         }
 
-        var markers = L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar });
+        var markers = L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar, removeOutsideVisibleBounds: true, spiderfyDistanceMultiplier: 3 });
 
         var markerList = [];
 
