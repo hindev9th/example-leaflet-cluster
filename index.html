@@ -28,10 +28,10 @@
         <div id="progress-bar"></div>
     </div>
     <div id="map"></div>
-    <span>Mouse over a cluster to see the bounds of its children and click a cluster to zoom to those bounds</span>
     <script type="text/javascript">
         var tiles = L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {
             maxZoom: 20,
+            maxNativeZoom: 20,
             scrollWheelZoom: false,
             bounceAtZoomLimits: false,
             markerZoomAnimation: false,
@@ -42,7 +42,19 @@
         }),
             latlng = L.latLng(-37.79, 175.27);
 
-        var map = L.map('map', { center: latlng, zoom: 13, layers: [tiles] });
+        var map = L.map('map', {
+            center: latlng,
+            zoom: 13,
+            layers: [tiles],
+            maxZoom: 20,
+            maxNativeZoom: 20,
+            scrollWheelZoom: false,
+            bounceAtZoomLimits: false,
+            markerZoomAnimation: false,
+            fadeAnimation: false,
+            zoomAnimation: false,
+            worldCopyJump: true,
+        });
 
         var progress = document.getElementById('progress');
         var progressBar = document.getElementById('progress-bar');
